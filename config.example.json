@@ -1,10 +1,8 @@
 {
-    "token": "PASTE-BOT-ACCOUNT-TOKEN-HERE",
-    "prefix": "k?",
-    "_comment": "replace 'prefix' with what you want the default prefix to be",
-    "owner": "PASTE-YOUR-ID-HERE",
-    "logChannel": "PASTE-LOG-CHANNEL-ID-HERE",
-    "evalAllow": [],
-    "__comment": "put user IDs who are allowed to use the eval command in evalAllow",
-    "imgur": "imgur-app-id-here"
+    "token": "NTE-PUT-TOKEN-HERE-riORPDnKA",
+    "prefix": "a?",
+    "owner": "378-YOUR-ID-7299",
+    "logChannel": "484-LOG-CHANNEL-ID-36458",
+    "evalAllow": ["424034759925170186", "454461184792461312", "these IDs are allowed to eval"],
+    "ua": "UA-126194304-1"
 }
