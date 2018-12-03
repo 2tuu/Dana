@@ -1,0 +1,10 @@
+{
+    "token": "PASTE-BOT-ACCOUNT-TOKEN-HERE",
+    "prefix": "k?",
+    "_comment": "replace 'prefix' with what you want the default prefix to be",
+    "owner": "PASTE-YOUR-ID-HERE",
+    "logChannel": "PASTE-LOG-CHANNEL-ID-HERE",
+    "evalAllow": [],
+    "__comment": "put user IDs who are allowed to use the eval command in evalAllow",
+    "imgur": "imgur-app-id-here"
+}

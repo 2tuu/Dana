@@ -1,0 +1,3 @@
+
+Red (for errors/toggle): 0xF46242
+Green (toggle): 0x32ff58
