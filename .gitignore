@@ -1,0 +1,26 @@
+
+# Created by https://www.gitignore.io/api/java
+
+### Config ###
+config.json
+tags.sqlite
+notes.txt
+nameref.txt
+core
+commands/imgur.js
+
+# Extra Storage
+JSON/blacklist.json
+.vs
+
+# Node Folders/Files
+node_modules/
+Beta-Kit/
+TrialKit.js
+
+# Package 
+package-lock.json
+package.json
+
+# End of https://www.gitignore.io/api/java
+*.save
