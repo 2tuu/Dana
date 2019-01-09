@@ -5,8 +5,10 @@ const client = new Discord.Client({
 });
 const fs = require("fs");
 
-function isCute(i){
-    return true;
+function isCute(i) {
+  i = i.toLowerCase();
+  if (i === 'kab') return false;
+  return true;
 }
 
 function isTrog(i){
@@ -160,21 +162,6 @@ client.on("messageDelete", (message) => {
 
 //On-message event
 client.on("message", async message => {
-
-  if(message.author.bot == false){
-
-if(message.channel.id == "110374153562886144" || message.channel.id == "468690756899438603" || message.channel.id == "110373943822540800")
-  sql.get(`SELECT * FROM ai`).then(row => {
-
-    if(message.content.includes("<@") || message.content.includes("<#")){
-      
-    } else {
-      sql.run(`UPDATE ai SET aiData = "${row.aiData + " " + message.content.replace(/\n/g, "").replace(new RegExp("\"", 'g'), "")}"`);
-    }
-  });
-
-
-}
 
   if(message.channel.type === "dm") return;
 

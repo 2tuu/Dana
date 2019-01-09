@@ -5,14 +5,14 @@ exports.run = async (sql, client, newChannel, oldChannel) => {
     var channel = newChannel;
     try{
     var guildID = channel.guild.id;
-    console.log(guildID);
     } catch(err){
         console.error(err);
     }
 
     sql.get(`SELECT * FROM modlog WHERE serverId ="${guildID}"`).then(row => {
 
-        if(!row) return console.log('no row');
+        if(!row) return;
+        if(newChannel.nsfw === oldChannel.nsfw && newChannel.topic === oldChannel.topic && oldChannel.name === newChannel.name) return;
 
         if(row.enabled === "yes" && row.logChannels === "yes"){
 
@@ -23,15 +23,15 @@ exports.run = async (sql, client, newChannel, oldChannel) => {
             ch.send("```diff\n+Channel Updated``````diff\n" + 
             "-Old Channel:\nName: " + newChannel.name +
             "\nTopic: " + newChannel.topic + 
+            "\nNSFW: " + newChannel.nsfw + 
             "\n Category: " + newChannel.parent.name + "\n``````diff\n" + 
             "+New Channel:\nName: " + oldChannel.name +
             "\nTopic: " + oldChannel.topic + 
+            "\nNSFW: " + oldChannel.nsfw + 
             "\nCategory: " + oldChannel.parent.name + "\n```\n")
            }
         }
 
     });
-
-    console.log(channel.id);
    
 }

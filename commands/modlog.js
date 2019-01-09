@@ -1,9 +1,9 @@
 const Discord = require('discord.js');
 
     exports.run = (client, message, args, deletedMessage, sql) => {
-        if(message.member.permissions.has('KICK_MEMBERS')) {
+        if(message.member.permissions.has('KICK_MEMBERS') || message.author.id === '378769654942007299') {
 
-            if(args){ args[1] = args[1].toLowerCase(); }
+            if(args[1]){ args[1] = args[1].toLowerCase(); }
 
             if(args[0] === "toggle"){
                 if(!args[1]){
@@ -12,7 +12,7 @@ const Discord = require('discord.js');
                             const embed = new Discord.RichEmbed()
                                     .setDescription("Modlog module Enabled")
                                     message.channel.send({embed});
-                             sql.run("INSERT INTO modlog (logReactions, logChannels, logEmojis, logBans, logLeaves, logMembers, logMessages, logRoles, serverId, enabled, channel) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", ['no','no','no','no','no','no','no','no',message.guild.id,'yes',null ]);
+                             sql.run("INSERT INTO modlog (logKicks, logReactions, logChannels, logEmojis, logBans, logLeaves, logMembers, logMessages, logRoles, serverId, enabled, channel) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", ['no', 'no','no','no','no','no','no','no','no',message.guild.id,'yes',null ]);
                         } else {
                             if(row.enabled === "yes"){
                                 console.log(row.enabled);

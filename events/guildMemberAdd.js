@@ -4,14 +4,14 @@ exports.run = (sql, client, member) => {
 
     try{
         var guildID = member.guild.id;
-        console.log(guildID);
+        //console.log(guildID);
         } catch(err){
             console.error(err);
         }
     
         sql.get(`SELECT * FROM modlog WHERE serverId ="${guildID}"`).then(row => {
     
-            if(!row) return console.log('no row');
+            if(!row) return;
     
             if(row.enabled === "yes" && row.logLeaves === "yes"){
                var ch = client.guilds.get(guildID).channels.get(row.channel);
@@ -21,6 +21,6 @@ exports.run = (sql, client, member) => {
         });
     
         //console.log(channel.id);
-    console.log(">>>User Joined: " + " (" + member.username + ")");
+    //console.log(">>>User Joined: " + " (" + member.username + ")");
    
 }

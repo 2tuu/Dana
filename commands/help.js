@@ -6,7 +6,7 @@ exports.run = (client, message, args) => {
     if(!args[0]){
         const embed = new Discord.RichEmbed()
         .setTitle("Module List - <> = Disabled")
-        .setDescription("Use `@kit checkprefix` to see this server's prefix\nView site [Here](https://bot.kitk.us/)\n")
+        .setDescription("Use `@dana checkprefix` to see this server's prefix\nView site [Here](https://bot.kitk.us/)\n")
         .addField("Staff Commands", "```Ban, Kick, Purge, Prefix, Snipe, RoleBan, SlowMode, modlog```")
         .addField("Utility Commands", "```Help, Note, lookup, prefix, reportbug```")
         .addField("Searching Commands", "```Weather, Bird, Cat, Rabbit```")

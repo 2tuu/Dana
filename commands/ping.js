@@ -1,7 +1,7 @@
 exports.run = async (client, message, args) => {
 
     m = await message.channel.send("Ping?");
-    m.edit(`Pong \`${m.createdTimestamp - message.createdTimestamp}ms\``);
+    m.edit(`Pong \`${Math.floor((m.createdTimestamp - message.createdTimestamp) - client.ping)}ms\``);
 
 }
 

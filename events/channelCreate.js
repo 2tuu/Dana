@@ -5,14 +5,13 @@ exports.run = async (sql, client, channel) => {
     var channelID = channel.id;
     try{
     var guildID = channel.guild.id;
-    console.log(guildID);
     } catch(err){
         console.error(err);
     }
 
     sql.get(`SELECT * FROM modlog WHERE serverId ="${guildID}"`).then(row => {
 
-        if(!row) return console.log('no row');
+        if(!row) return;
 
         if(row.enabled === "yes" && row.logChannels === "yes"){
            var ch = client.guilds.get(guildID).channels.get(row.channel);
@@ -20,7 +19,5 @@ exports.run = async (sql, client, channel) => {
         }
 
     });
-
-    console.log(channel.id);
    
 }

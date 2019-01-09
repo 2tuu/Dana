@@ -2,7 +2,7 @@ const fs = require('fs');
 let data = JSON.parse(fs.readFileSync("./JSON/data.json", "utf8"));
 let config = JSON.parse(fs.readFileSync("./config.json", "utf8"));
 
-exports.run = (client) => {
+exports.run = (sql, client) => {
     console.log("Client Logon Successful");
 	console.log('\x1b[32m', "======================");
 	console.log("");

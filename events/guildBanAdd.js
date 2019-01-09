@@ -4,23 +4,36 @@ exports.run = async (sql, client, guild, user) => {
 
     try{
     var guildID = guild.id;
-    console.log(guildID);
+    var reason = "No Reason";
 
     } catch(err){
         console.error(err);
     }
 
-    sql.get(`SELECT * FROM modlog WHERE serverId ="${guildID}"`).then(row => {
+    var row = await sql.get(`SELECT * FROM modlog WHERE serverId ="${guildID}"`);
 
-        if(!row) return console.log('no row');
+        var audit = await guild.fetchAuditLogs();
+
+
+
+        try{
+        var auditLog = await audit.entries.first();
+        }
+        catch(err){
+            var ch = client.guilds.get(guildID).channels.get(row.channel);
+            return ch.send("```diff\n-An error occured when accessing the audit log, please make sure I have permission to view it" + "\n```")
+        }
+
+
+        if(auditLog.reason){
+        reason = auditLog.reason;
+        }
+        
+        if(!row) return;
 
         if(row.enabled === "yes" && row.logBans === "yes"){
            var ch = client.guilds.get(guildID).channels.get(row.channel);
-            ch.send("```diff\n-Member Banned: " + user.tag + "\n```")
+            ch.send("```diff\n-Member Banned: " + user.tag + `\nReason: ${reason}` + "\n```")
         }
 
-    });
-
-    //console.log(channel.id);
-   
 }

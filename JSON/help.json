@@ -5,7 +5,7 @@
     },
     "note":{
         "name": "Notepad",
-        "description":"Save any notes and bring them up later \n\n**Sub-commands:**\n`k?note create` - Creates a notepad (Limit 1)\n`k?note edit` - Replaces the entire note with the given text\n`k?note append` - Adds a line with the content you've given, to the end of the note, preserving any previous content"
+        "description":"Save any notes and bring them up later \n\n**Sub-commands:**\n`a?note create` - Creates a notepad (Limit 1)\n`a?note edit` - Replaces the entire note with the given text\n`a?note append` - Adds a line with the content you've given, to the end of the note, preserving any previous content"
     },
     "quote":{
         "name": "Message Quoter",
@@ -13,11 +13,11 @@
     },
     "welcome":{
         "name": "Welcome Messages",
-        "description":"Displays a welcome message on a member's joining.\n\n**Sub-commands:**\nk?setchannel #channel - Sets the welcome message channel to the mentioned channel, or ID\nk?welcome toggle - Disables/welcome welcome messages\nk?welcome edit <message> - Set the welcome message for the server\n\n**Welcome Message Syntax:**\n**{member}** is replaced with `@user` when the user joins\n**{member.username}** is replaced with the joining members username\n**{guild}** is replaced with the server's name"
+        "description":"Displays a welcome message on a member's joining.\n\n**Sub-commands:**\na?setchannel #channel - Sets the welcome message channel to the mentioned channel, or ID\na?welcome toggle - Disables/welcome welcome messages\na?welcome edit <message> - Set the welcome message for the server\n\n**Welcome Message Syntax:**\n**{member}** is replaced with `@user` when the user joins\n**{member.username}** is replaced with the joining members username\n**{guild}** is replaced with the server's name"
     },
     "tag":{
         "name": "Tag Handler",
-        "description":"Saves text to be accessed later\nCan be deleted by force with **k?t forcedelete tagname**, but only by a moderator\n\nTags can use the following:\n{arg#} - Is replaced with an argument (ie. {arg1})\n{carg#} - Does the same as {arg#}, but replaces with the caller's name if missing\n{channel} - Is replaced with the message's channel\n{caller} - Is replaced with the caller (ie. {caller} = @user)\n{num:#;} - Generates a random number, # being the number\n{choose;item;item;item} - Chooses from the given items (can be < 3 >)\n{callerid} - Is replaced with the caller's ID\n{caller.name} - Is replaced with the caller's username\n{n} - Adds a new line (Fix for oneline in YNA)\n**Most YNA code will work**\n\n**Usage:**\ntag create <tagname> <tag content> | tag <tagname>\ntag <tagname> cdel <true/false> `<-enables automatic caller deletion`"
+        "description":"Saves text to be accessed later\nCan be deleted by force with **a?t forcedelete tagname**, but only by a moderator\n\nTags can use the following:\n{arg#} - Is replaced with an argument (ie. {arg1})\n{carg#} - Does the same as {arg#}, but replaces with the caller's name if missing\n{channel} - Is replaced with the message's channel\n{caller} - Is replaced with the caller (ie. {caller} = @user)\n{num:#;} - Generates a random number, # being the number\n{choose;item;item;item} - Chooses from the given items (can be < 3 >)\n{callerid} - Is replaced with the caller's ID\n{caller.name} - Is replaced with the caller's username\n{n} - Adds a new line (Fix for oneline in YNA)\n**Most YNA code will work**\n\n**Usage:**\ntag create <tagname> <tag content> | tag <tagname>\ntag <tagname> cdel <true/false> `<-enables automatic caller deletion`"
     },
     "snipe":{
         "name": "Message Sniper",
@@ -29,7 +29,7 @@
     },
     "prefix":{
         "name": "Prefix",
-        "description":"Changes the bot's prefix **(Note: Bot will always respond to k? regardless of custom prefix)** \n\n**[Usage: prefix/setprefix <prefix>]**"
+        "description":"Changes the bot's prefix **(Note: Bot will always respond to a? regardless of custom prefix)** \n\n**[Usage: prefix/setprefix <prefix>]**"
     },
     "purge":{
         "name": "Purge",
