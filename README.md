@@ -1,3 +1,5 @@
+**This project is discontinued, it's functions are being worked into Kit.** 
+ 
  ## Kit Bot
  A basic moderation bot for discord
 
