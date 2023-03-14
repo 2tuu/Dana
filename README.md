@@ -1,4 +1,4 @@
-# This project is discontinued, it's functions are being worked into 2tuu/Kit
+# This project is discontinued, its functions have been integrated into Kit
 
 
  ## Running
